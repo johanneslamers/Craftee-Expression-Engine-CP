@@ -1,0 +1,117 @@
+#templates, #templateGroups {
+
+	.groupList, .templateGrouping {
+		background: darken($templateGrey, 10%) !important;
+	}
+
+	.formHeading {
+		background: $mainNavBg !important;
+	}
+}
+
+#mainContent {
+	.templateEditorTop {
+		background: white;
+		margin-bottom: 15px;
+
+		h2 {
+			color: $primaryColor;
+			font-size: 22px !important;
+			@include text-shadow(0);
+			
+			span {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.formArea {
+		@include border-radius(2px !important);
+		@include box-shadow(0px 1px 3px rgba(000,000,000,0) !important);
+	}
+}
+
+#mainContent .formArea .formHeading .newTemplate {
+	background: $primaryColor !important;
+	border: none!important;
+ 	@include border-radius(2px !important);
+	color: white !important;
+	color: $white !important;
+	font-size: 11px !important;
+	margin: -2px auto 0 auto;
+	text-align: center;
+
+	 &:hover a {
+	 	background: lighten($primaryColor, .01%) !important;
+		color: white !important;
+		@include background(linear-gradient(top, lighten($white, .01%), $white));
+	 	text-decoration: none !important;
+	}
+}
+
+
+
+
+.defaultGroupName, .defaultIndicator {
+	color: $primaryColor !important;
+}
+
+#templates {
+	td a {
+		
+ 
+		 &:hover {
+					}
+	}
+	
+	.templateName a {
+		background: none !important;
+		border: none !important;
+		@include border-radius(none !important);
+		@include box-shadow(none !important);
+		color: $nearBlack !important;
+		font-weight: bold;
+		@include text-shadow(none !important);						
+	}
+	
+	.cellRight {
+		
+		a {
+			background: $deleteRed !important;
+			border: 1px solid darken($deleteRed, 5%) !important;
+		 	@include border-radius(2px !important);
+			@include box-shadow(0px 0px 0px rgba(000,000,000,0.0));
+			color: $white !important;
+			font-size: 11px;
+			margin: 0 auto;
+			padding: 3px 9px;
+			text-align: center;
+			text-decoration: none;
+	 
+			 &:hover {
+				background: darken($deleteRed, 5%) !important;
+				color: $white !important;
+				@include background(linear-gradient(top, darken($deleteRed, 5%), $deleteRed));
+			 	text-decoration: none !important;
+			}
+		}
+	}
+}
+
+.templateTable tr.accessRowHeader td {
+	border-left: none !important;
+	border-right: none !important;
+	border-bottom: none !important;
+}
+
+.templateTable tr.accessRowHeader td .accessTable th, .templateTable tr.accessRowHeader td .accessTable td {
+	background: lighten($offWhite, 20%) !important;
+}
+
+#mainContent #templateEditor, #mainContent #template_create {
+	@include box-shadow(none !important);
+}
+
+#mainContent .editAccordion {
+	@include background(linear-gradient(top, lighten($nearBlack, 34%), lighten($nearBlack, 15%)) !important);
+}

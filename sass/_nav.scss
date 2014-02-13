@@ -1,0 +1,140 @@
+// Fixing the wonderful navigation
+
+body {
+	background-color:	#f1f2f3 !important;
+	font-family:		"HelveticaNeue", Arial, Helvetica, Geneva, sans-serif;
+	text-align:			left;
+	font-size:			13px;
+	color:				#6e6e78;
+	margin:				0;
+	padding:			0;
+}
+
+html {
+		background-color:	#f1f2f3 !important;
+
+}
+
+
+#footer {
+	clear:				both;
+	text-align:			center;
+	font-size:			11px;
+	color:				#8F9A9C;
+	background-color:	#f1f2f3;
+	padding:			20px 0 15px 0;
+	
+	img {
+		display: none;
+	}
+	
+	a {
+	}
+}
+
+#accessoriesDiv .accessory {
+	background: $mainNavBg !important;
+}
+
+#mainMenu {
+	background: #333f4d;
+	margin-bottom: 40px;
+}
+
+#navigationTabs {
+	@extend .clearfix;
+	margin-top: 0;
+	padding: 15px 0;
+
+	// Styling of main top level nav
+	> li {
+		margin: 0 3px 0 3px;
+		padding-bottom: 5px;
+
+		> a {
+			background: transparent !important;
+			@include border-radius(2px !important);
+			color: #d7d9db !important;
+			font-size: 13px !important;
+			margin: 0 0 0px 0 !important;
+			padding: 7px !important;
+
+			&:hover {
+				background: none;
+				color: $primaryColor !important;
+			}
+
+			&.addTab {
+				background: none !important;
+				@include box-shadow(none);
+				color: $primaryColor !important;
+			}
+		}
+
+		&.home a, &.msm_sites a, a[rel=external] {
+			padding-right: 8px !important;
+		}
+	}
+
+	// Styling of main top style nav with dropdown
+	> li.parent > a:after, > li.parent:focus > a:after, > li.parent.active > a:after {
+		border: none;
+		content: "+";
+		color: lighten($mainNavLinkBg, 12%) !important;
+		display: inline;
+		font-size: 14px;
+		opacity: 0.5;
+		margin-left: 4px;
+		position: relative;
+		display: none;
+	}
+
+	//Styling the dropdowns
+	> li > ul {
+		margin-top: 6px !important;
+	}
+
+	> li ul, > li ul ul {
+		@include border-radius(2px !important);
+		@include box-shadow(0px 3px 10px rgba(000,000,000,0.1));
+	}
+}
+
+
+#navigationTabs li ul {
+	background: 		#e6ecef;
+	border-left:		none !important;
+	color:				#5f6c74;
+	display:			none;
+	font-size:			12px;
+	margin-left:		-1px;
+	margin-top:			-4px;
+	padding:			8px 0 8px 0;
+	position:			absolute;
+	width:				169px;
+	z-index:			200;
+
+	-webkit-border-radius:	10px;
+	border-radius:			10px;
+
+	background:			#e6ecef !important;
+
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 1px 3px 10px;
+    -moz-box-shadow:    rgba(0, 0, 0, 0.1) 1px 3px 10px;
+	box-shadow:			rgba(0, 0, 0, 0.1) 1px 3px 10px;
+}
+
+
+// The hover nightmare 
+
+#navigationTabs li li.hover,
+#navigationTabs ul li li.hover, #navigationTabs li li.parent:focus, 
+#navigationTabs li li.parent.active, #navigationTabs li li.parent:focus > a,
+#navigationTabs li li.parent.active > a {
+	background: $primaryColor !important;
+}
+
+#navigationTabs li li.parent:focus > a:after,
+#navigationTabs li li.parent.active > a:after {
+	border-left: 10px solid $primaryColor;
+}
